@@ -16,12 +16,8 @@ class Wallet(object):
             
         if not isinstance(amount,int):
             return "Numbers only please"
-        self.balance += amount
-        return self.balance
-
-    self.wallet.balance = 0
-    self.assertEqual(self.wallet.deposit(1000))
-    self.assertEqual(self.wallet.deposit(500))   
+            self.balance += amount
+            return self.balance
 
     def withdraw(self):
         """ Withdraws money from wallet """

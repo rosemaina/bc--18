@@ -15,14 +15,10 @@ class TestWallet(unittest.TestCase):
         """ Checks that deposit adds money to wallet
             get amount to be deposited"""
         
-        self.Wallet.balance = 0
+        self.wallet.balance = 0
         self.assertEqual(self.wallet.deposit(1000),1000)
         self.assertEqual(self.wallet.deposit(500),1500)
 
         #test input type
     def test_amount_is_number(self):
         self.assertEqual(self.wallet.deposit("1000"),"Numbers only please!!")
-
-
-        if __name__== '__main__':
-            unittest.main()
