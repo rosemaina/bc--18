@@ -16,4 +16,4 @@ def fizzbuzz(number):
 
         return str(number)
 
-print (fizzbuzz(number))
+print (fizzbuzz(15))
