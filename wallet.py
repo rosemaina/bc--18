@@ -24,4 +24,4 @@ class Wallet(object):
     self.assertEqual(self.wallet.deposit(500))   
 
     def withdraw(self):
-    """ Withdraws money from wallet """
+        """ Withdraws money from wallet """

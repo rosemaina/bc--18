@@ -15,7 +15,7 @@ class TestWallet(unittest.TestCase):
         """ Checks that deposit adds money to wallet
             get amount to be deposited"""
         
-        self.wallet.balance = 0
+        self.Wallet.balance = 0
         self.assertEqual(self.wallet.deposit(1000),1000)
         self.assertEqual(self.wallet.deposit(500),1500)
 
@@ -24,5 +24,5 @@ class TestWallet(unittest.TestCase):
         self.assertEqual(self.wallet.deposit("1000"),"Numbers only please!!")
 
 
-if __name__== '__main__':
-unittest.main()
+        if __name__== '__main__':
+            unittest.main()
