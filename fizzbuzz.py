@@ -1,19 +1,19 @@
-def fizzbuzz(num):
+def fizzbuzz(number):
 
-    if num % 3 == 0:
+    if number % 3 == 0:
         return 'Fizz'
 
-    elif num % 5 == 0:
+    elif number % 5 == 0:
 
         return 'Buzz'
 
-    elif num % 3 == 0 and n % 5 == 0:
+    elif number % 3 == 0 and n % 5 == 0:
    
     
         return 'FizzBuzz'
 
     else:
 
-        return str(num)
+        return str(number)
 
-print (fizzbuzz(num))
+print (fizzbuzz(number))
