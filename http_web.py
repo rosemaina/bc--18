@@ -1,5 +1,13 @@
 """ Returns error message whenone does not input characters within the range of 1-50"""
-import requests
+import urllib.request
+
+import urllib.parse
+
+# url = '<a href="https://api.spotify.com/v1/search?type=artist&q=snoop">https://api.spotify.com/v1/search?type=artist&q=snoop</a>'
+
+# f = urllib.request.urlopen(url)
+
+# print(f.read().decode('utf-8'))
 
 def get_data(get_url, post_id):
 
@@ -10,9 +18,10 @@ def get_data(get_url, post_id):
 
         if int(post_id) <= 50 and int(post_id) > 0:
 
-            r = requests.get(get_url + post_id)
+            r = urllib.request.urlopen(get_url + post_id)
 
-            return r
+
+            return r.read().decode('utf-8')
 
         else:
 
@@ -21,13 +30,11 @@ def get_data(get_url, post_id):
     except ValueError as e:
 
 
-
         print("A whole number is required for your request to succeed")
 
         raise(e)
 
-    return "* Error Message*"
-
+    return "* 404 *"
 
 
 def main():
@@ -36,16 +43,16 @@ def main():
 
     url = "https://jsonplaceholder.typicode.com/posts/"
 
-    post_id = input("Enter a No between 1 and 50: ")
+    # url = '<a href="https://jsonplaceholder.typicode.com/posts/">https://jsonplaceholder.typicode.com/posts/</a>'
+
+    post_id = input("Enter a number between 1 and 50:")
 
     print("Getting your request...")
 
-    get_r = get_data(url,post_id)
+
+    get_r = get_data(url, post_id)
+
 
     print("GET Response data Status code Headers" % ("-"*13,get_r.text, "-"*21, get_r.status_code,"-"*2, get_r.headers))
 
 
-
-if __name__ == '__main__':
-
-    main()
