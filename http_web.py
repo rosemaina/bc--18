@@ -1,4 +1,4 @@
-""" Returns error message whenone does not input characters within the range of 1-50"""
+""" Returns error message when one does not input numbers within the range from 1-50"""
 import urllib.request
 
 import urllib.parse
@@ -20,7 +20,6 @@ def get_data(get_url, post_id):
 
             r = urllib.request.urlopen(get_url + post_id)
 
-
             return r.read().decode('utf-8')
 
         else:
@@ -28,7 +27,6 @@ def get_data(get_url, post_id):
             print("Enter a No between 1 and 50")
 
     except ValueError as e:
-
 
         print("A whole number is required for your request to succeed")
 
@@ -43,12 +41,9 @@ def main():
 
     url = "https://jsonplaceholder.typicode.com/posts/"
 
-    # url = '<a href="https://jsonplaceholder.typicode.com/posts/">https://jsonplaceholder.typicode.com/posts/</a>'
-
     post_id = input("Enter a number between 1 and 50:")
 
-    print("Getting your request...")
-
+    print("Getting the request...")
 
     get_r = get_data(url, post_id)
 
